@@ -1,4 +1,4 @@
-include <stdlib.h>
+#include <stdlib.h>
 #include "dog.h"
 
 /**
@@ -15,14 +15,14 @@ int _strlen(char *s)
 
 	while (s[i] != '\0')
 	{
-		i++;
+	i++;
 	}
 
 	return (i);
 }
 
 /**
- * *_strcpy - copies the string pointed to by src
+ *_strcpy - copies the string pointed to by src
  * including the terminating null byte (\0)
  * to the buffer pointed to by dest
  * @dest: pointer to the buffer in which we copy the string
@@ -38,12 +38,12 @@ char *_strcpy(char *dest, char *src)
 
 	while (src[len] != '\0')
 	{
-		len++;
+	len++;
 	}
 
 	for (i = 0; i < len; i++)
 	{
-		dest[i] = src[i];
+	dest[i] = src[i];
 	}
 	dest[i] = '\0';
 
@@ -68,20 +68,20 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
-		return (NULL);
+	return (NULL);
 
 	dog->name = malloc(sizeof(char) * (len1 + 1));
 	if (dog->name == NULL)
 	{
-		free(dog);
-		return (NULL);
+	free(dog);
+	return (NULL);
 	}
 	dog->owner = malloc(sizeof(char) * (len2 + 1));
 	if (dog->owner == NULL)
 	{
-		free(dog);
-		free(dog->name);
-		return (NULL);
+	free(dog);
+	free(dog->name);
+	return (NULL);
 	}
 	_strcpy(dog->name, name);
 	_strcpy(dog->owner, owner);
